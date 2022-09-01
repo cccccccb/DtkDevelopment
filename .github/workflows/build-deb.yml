@@ -20,7 +20,6 @@ jobs:
 
       - name: Environment
         run: |
-          sudo apt install -y libqt5core5a
           sudo ./.environment/DebBuild_env /etc/apt/sources.list
           cat /etc/apt/sources.list
           sudo apt install -y build-essential
@@ -33,25 +32,25 @@ jobs:
           cd dtkcommon
           mkdir build
           cd build
-          cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
           cmake --build . -j12
           cmake --install .
           cd ../../dtkcore
           mkdir build
           cd build
-          cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
           cmake --build . -j12
           cmake --install .
           cd ../../dtkgui
           mkdir build
           cd build
-          cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
           cmake --build . -j12
           cmake --install .
           cd ../../dtkwidget
           mkdir build
           cd build
-          cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
           cmake --build . -j12
           cmake --install .
 
