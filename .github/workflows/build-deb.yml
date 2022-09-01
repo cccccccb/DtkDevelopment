@@ -20,6 +20,7 @@ jobs:
 
       - name: Environment
         run: |
+          sudo apt install -y libdouble-conversion-dev
           sudo LD_LIBRARY_PATH=./QtInstalled/5.15.3/lib/ ./.environment/DebBuild_env /etc/apt/sources.list
           cat /etc/apt/sources.list
           sudo apt install -y build-essential
