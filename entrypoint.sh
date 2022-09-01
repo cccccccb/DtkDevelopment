@@ -6,6 +6,7 @@ mv .environment/sources.list /etc/apt/
 cat /etc/apt/sources.list
 apt update
 apt install -y build-essential
+apt build-dep -y cmake
 apt build-dep -y libdtkcore-dev
 apt build-dep -y libdtkgui-dev
 apt build-dep -y libdtkwidget-dev
