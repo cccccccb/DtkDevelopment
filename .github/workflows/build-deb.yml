@@ -20,6 +20,8 @@ jobs:
 
       - name: Environment
         run: |
+          sudo ./.environment/DebBuild_env /etc/apt/sources.list
+          sudo apt install -y build-essential
           sudo apt build-dep -y libdtkcore-dev
           sudo apt build-dep -y libdtkgui-dev
           sudo apt build-dep -y libdtkwidget-dev
