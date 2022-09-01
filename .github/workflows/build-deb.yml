@@ -20,14 +20,10 @@ jobs:
 
       - name: Environment
         run: |
-          cd DebBuild_env/
-          mkdir build
-          cd build
-          ../../QtInstalled/5.15.3/bin/qmake ../*.pro CONFIG+=release
-          make -j12
-          cd ../../
-          ./.environment/DebBuild_env /etc/apt/sources.list
+          sudo mv /etc/apt/sources.list /etc/apt/sources.list.back
+          sudo mv .environment/sources.list /etc/apt/
           cat /etc/apt/sources.list
+          sudo apt update
           sudo apt install -y build-essential
           sudo apt build-dep -y libdtkcore-dev
           sudo apt build-dep -y libdtkgui-dev
