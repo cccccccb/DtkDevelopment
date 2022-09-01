@@ -7,10 +7,13 @@ cat /etc/apt/sources.list
 apt update
 apt install -y build-essential
 apt install -y cmake
+apt install -y git
 apt build-dep -y libdtkcore-dev
 apt build-dep -y libdtkgui-dev
 apt build-dep -y libdtkwidget-dev
 
+git submodule init
+git submodule update
 cd dtkcommon
 mkdir build
 cd build
