@@ -19,13 +19,14 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set Strap
-        sudo apt install -y debootstrap
-        sudo debootstrap --arch amd64 buster /mnt/debian10_amd64 https://mirrors.163.com/debian/
-        sudo mount --bind /sys /mnt/debian10_amd64/sys
-        sudo mount --bind /dev /mnt/debian10_amd64/dev
-        sudo mount --bind /proc /mnt/debian10_amd64/proc
-        sudo chroot /mnt/debian10_amd64
-        pwd
+        run: |
+          sudo apt install -y debootstrap
+          sudo debootstrap --arch amd64 buster /mnt/debian10_amd64 https://mirrors.163.com/debian/
+          sudo mount --bind /sys /mnt/debian10_amd64/sys
+          sudo mount --bind /dev /mnt/debian10_amd64/dev
+          sudo mount --bind /proc /mnt/debian10_amd64/proc
+          sudo chroot /mnt/debian10_amd64
+          pwd
 
       - name: Environment
         run: |
