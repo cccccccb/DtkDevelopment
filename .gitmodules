@@ -1,0 +1,15 @@
+[submodule "dtkcore"]
+	path = dtkcore
+	url = https://github.com/linuxdeepin/dtkcore.git
+[submodule "dtkgui"]
+	path = dtkgui
+	url = https://github.com/linuxdeepin/dtkgui.git
+[submodule "dtkcommon"]
+	path = dtkcommon
+	url = https://github.com/linuxdeepin/dtkcommon.git
+[submodule "dtkdeclarative"]
+	path = dtkdeclarative
+	url = https://github.com/linuxdeepin/dtkdeclarative.git
+[submodule "dtkwidget"]
+	path = dtkwidget
+	url = https://github.com/linuxdeepin/dtkwidget.git

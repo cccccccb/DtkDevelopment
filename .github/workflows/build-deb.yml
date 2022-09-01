@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Environment
+        run: |
+        sudo apt build-dep -y libdtkcore-dev
+        sudo apt build-dep -y libdtkgui-dev
+        sudo apt build-dep -y libdtkwidget-dev
+
+      - name: Build
+        run: |
+        cd dtkcommon
+        mkdir build
+        cd build
+        cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+        cmake --build . -j12
+        cmake --install .
+        cd ../../dtkcore
+        mkdir build
+        cd build
+        cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+        cmake --build . -j12
+        cmake --install .
+        cd ../../dtkgui
+        mkdir build
+        cd build
+        cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+        cmake --build . -j12
+        cmake --install .
+        cd ../../dtkwidget
+        mkdir build
+        cd build
+        cmake -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+        cmake --build . -j12
+        cmake --install .
+
+      -name Pack
+        run: tar zcvf DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
