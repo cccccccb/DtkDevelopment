@@ -18,53 +18,8 @@ jobs:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
-      - name: Set Strap
-        run: |
-          sudo apt install -y debootstrap
-          sudo debootstrap --arch amd64 buster /mnt/debian10_amd64 https://mirrors.163.com/debian/
-          sudo mount --bind /sys /mnt/debian10_amd64/sys
-          sudo mount --bind /dev /mnt/debian10_amd64/dev
-          sudo mount --bind /proc /mnt/debian10_amd64/proc
-          sudo chroot /mnt/debian10_amd64
-          pwd
-
-      - name: Environment
-        run: |
-          sudo mv /etc/apt/sources.list /etc/apt/sources.list.back
-          sudo mv .environment/sources.list /etc/apt/
-          cat /etc/apt/sources.list
-          sudo apt update
-          sudo apt install -y build-essential
-          sudo apt build-dep -y libdtkcore-dev
-          sudo apt build-dep -y libdtkgui-dev
-          sudo apt build-dep -y libdtkwidget-dev
-
       - name: Build
-        run: |
-          cd dtkcommon
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
-          cmake --build . -j12
-          cmake --install .
-          cd ../../dtkcore
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
-          cmake --build . -j12
-          cmake --install .
-          cd ../../dtkgui
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
-          cmake --build . -j12
-          cmake --install .
-          cd ../../dtkwidget
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
-          cmake --build . -j12
-          cmake --install .
-
-      - name: Pack
-        run: tar zcvf DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
+            uses: ./ # Uses an action in the root directory
+            id: build
+      # - name: Pack
+      #   run: tar zcvf DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/

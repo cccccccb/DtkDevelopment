@@ -1,0 +1,5 @@
+name: 'Build Dtk Action'
+description: 'Build dtk'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
