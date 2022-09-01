@@ -19,7 +19,7 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Build
-            uses: ./ # Uses an action in the root directory
-            id: build
+        uses: ./ # Uses an action in the root directory
+        id: build
       # - name: Pack
       #   run: tar zcvf DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
