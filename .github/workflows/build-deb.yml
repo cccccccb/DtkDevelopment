@@ -20,7 +20,7 @@ jobs:
 
       - name: Environment
         run: |
-          sudo ./.environment/DebBuild_env /etc/apt/sources.list
+          sudo LD_LIBRARY_PATH=./QtInstalled/5.15.3/lib/ ./.environment/DebBuild_env /etc/apt/sources.list
           cat /etc/apt/sources.list
           sudo apt install -y build-essential
           sudo apt build-dep -y libdtkcore-dev
