@@ -7,6 +7,7 @@ cat /etc/apt/sources.list
 apt update
 apt install -y build-essential
 apt install -y git
+apt install -y libssh-dev
 apt build-dep -y libdtkcore-dev
 apt build-dep -y libdtkgui-dev
 apt build-dep -y libdtkwidget-dev
@@ -20,7 +21,7 @@ mkdir build
 cd build
 ../configure
 cmake --build . -j12
-sudo make install
+make install
 cd ../../../
 echo "cmake build finished"
 which cmake
