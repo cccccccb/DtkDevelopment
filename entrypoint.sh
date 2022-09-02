@@ -23,6 +23,10 @@ cd -
 
 PKG_CONFIG_PATH=`pwd`/QtInstalled/5.15.3/lib/pkgconfig pkg-config --cflags --libs gsettings-qt
 
+# Create cxxflags
+export CXXFLAGS="${CXXFLAGS} -L${INSTALLED_LIBPATH}"
+echo "CXXFLAGS: " $CXXFLAGS
+
 # build cmake 
 cd .environment/cmake-3.23.3
 mkdir build
