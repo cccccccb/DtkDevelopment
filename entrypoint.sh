@@ -10,6 +10,10 @@ apt install -y build-essential git libssh-dev libgtest-dev libgmock-dev librsvg2
 git submodule init
 git submodule update
 
+LD_LIBRARY_PATH=`pwd`/QtInstalled/5.15.3/lib
+echo "LD_LIBRARY_PATH" $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
 # build cmake 
 cd .environment/cmake-3.23.3
 mkdir build
