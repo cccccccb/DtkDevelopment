@@ -16,6 +16,10 @@ echo "ld so file: "
 cat /etc/ld.so.conf
 ldconfig
 
+echo "==============================="
+cat /etc/ld.so.cache
+echo "==============================="
+
 # build cmake 
 cd .environment/cmake-3.23.3
 mkdir build
