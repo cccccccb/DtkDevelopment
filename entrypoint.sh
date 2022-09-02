@@ -76,7 +76,7 @@ echo "Build dtkwidget"
 cd ../../dtkwidget
 mkdir build
 cd build
-../../QtInstalled/5.15.3/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+../../QtInstalled/5.15.3/bin/cmake -DNOTPACKAGE=false -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
 ../../QtInstalled/5.15.3/bin/cmake --build . -j12
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkwidget"
