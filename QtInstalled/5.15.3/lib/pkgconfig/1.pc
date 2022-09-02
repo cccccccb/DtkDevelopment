@@ -1,0 +1,12 @@
+prefix=/home/mojony/work/DtkDevelopment/QtInstalled/5.15.3/lib/pkgconfig
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/QGSettings
+
+
+Name: GSettingsQt
+Description: Qt bindings to GSettings
+Version: 1.0.0
+Libs: -L${libdir} -lgsettings-qt 
+Cflags: -I${includedir}
+

@@ -18,7 +18,7 @@ ldconfig
 
 cd QtInstalled/5.15.3/lib/pkgconfig
 CURRENT_LIB_PATH=`pwd`/../..
-sed -i "s/\[_PKG_CONFIG_PATH_MODULE_\]/${CURRENT_LIB_PATH}/" *.pc
+sed -i "s|\[_PKG_CONFIG_PATH_MODULE_\]|${CURRENT_LIB_PATH}|" *.pc
 cd -
 
 PKG_CONFIG_PATH=`pwd`/QtInstalled/5.15.3/lib/pkgconfig pkg-config --cflags --libs gsettings-qt
