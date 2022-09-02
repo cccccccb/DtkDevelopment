@@ -14,7 +14,7 @@ git submodule update
 cd .environment/cmake-3.23.3
 mkdir build
 cd build
-../configure --prefix="../../QtInstalled/5.15.3/"
+../configure --prefix="../../../QtInstalled/5.15.3/"
 make -j16
 make install
 cd ../../../
