@@ -1,4 +1,4 @@
-prefix=/home/mojony/qt/QtInstalled/5.15.3
+prefix=[_PKG_CONFIG_PATH_MODULE_]
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -8,7 +8,7 @@ Name: Qt5 UiTools
 Description: Qt UiTools module
 Version: 5.15.3
 Libs: -L${libdir} -lQt5UiTools 
-Libs.private: /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Widgets.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lpthread /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Widgets.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lGL   
+Libs.private: [_PKG_CONFIG_PATH_MODULE_]/lib/libQt5Widgets.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lpthread /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Widgets.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lGL   
 Cflags: -DQT_UITOOLS_LIB -I${includedir}/QtUiTools -I${includedir}
 Requires: Qt5Core Qt5Gui Qt5Widgets
 

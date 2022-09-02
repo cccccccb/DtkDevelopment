@@ -2,7 +2,7 @@
 
 ls
 mv /etc/apt/sources.list /etc/apt/sources.list.back
-mv .environment/sources.list /etc/apt/
+cp .environment/sources.list /etc/apt/
 cat /etc/apt/sources.list
 apt update
 apt install -y build-essential git libmd4c0 libssh-dev libgtest-dev libgmock-dev librsvg2-dev libxext-dev libudev-dev x11proto-xext-dev libxcb-util0-dev libstartup-notification0-dev libmtdev-dev libegl1-mesa-dev libudev-dev libfontconfig1-dev libfreetype6-dev libglib2.0-dev libxrender-dev libxi-dev libcups2-dev
@@ -19,6 +19,11 @@ ldconfig
 echo "==============================="
 cat /etc/ld.so.cache
 echo "==============================="
+
+cd QtInstalled/5.15.3/lib/pkgconfig
+CURRENT_LIB_PATH=`pwd`/../..
+sed -i "s/\[_PKG_CONFIG_PATH_MODULE_\]/${CURRENT_LIB_PATH}/" *.pc
+cd -
 
 # build cmake 
 cd .environment/cmake-3.23.3

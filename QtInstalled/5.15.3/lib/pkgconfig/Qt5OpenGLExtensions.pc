@@ -1,4 +1,4 @@
-prefix=/home/mojony/qt/QtInstalled/5.15.3
+prefix=[_PKG_CONFIG_PATH_MODULE_]
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -8,7 +8,7 @@ Name: Qt5 OpenGLExtensions
 Description: Qt OpenGLExtensions module
 Version: 5.15.3
 Libs: -L${libdir} -lQt5OpenGLExtensions 
-Libs.private: /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lpthread -lGL   
+Libs.private: [_PKG_CONFIG_PATH_MODULE_]/lib/libQt5Gui.so /home/mojony/qt/QtInstalled/5.15.3/lib/libQt5Core.so -lpthread -lGL   
 Cflags: -DQT_OPENGLEXTENSIONS_LIB -I${includedir}/QtOpenGLExtensions -I${includedir}
 Requires: Qt5Core Qt5Gui
 

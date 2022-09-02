@@ -1,4 +1,4 @@
-prefix=/home/mojony/work/DtkDevelopment/QtInstalled/5.15.3
+prefix=[_PKG_CONFIG_PATH_MODULE_]
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
