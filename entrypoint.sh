@@ -25,6 +25,8 @@ CURRENT_LIB_PATH=`pwd`/../..
 sed -i "s/\[_PKG_CONFIG_PATH_MODULE_\]/${CURRENT_LIB_PATH}/" *.pc
 cd -
 
+PKG_CONFIG_PATH=`pwd`/../.. pkg-config --cflags --libs gsettings-qt
+
 # build cmake 
 cd .environment/cmake-3.23.3
 mkdir build
