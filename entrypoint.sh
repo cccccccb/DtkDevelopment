@@ -39,7 +39,7 @@ echo "Build dtkcommon"
 cd dtkcommon
 mkdir build
 cd build
-../../QtInstalled/5.15.3/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+../../QtInstalled/5.15.3/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
 ../../QtInstalled/5.15.3/bin/cmake --build . -j12
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkcommon"
@@ -50,7 +50,7 @@ echo "Build dtkcore"
 cd ../../dtkcore
 mkdir build
 cd build
-../../QtInstalled/5.15.3/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+../../QtInstalled/5.15.3/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
 ../../QtInstalled/5.15.3/bin/cmake --build . -j12
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkcore"
@@ -61,7 +61,7 @@ echo "Build dtkgui"
 cd ../../dtkgui
 mkdir build
 cd build
-../../QtInstalled/5.15.3/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+../../QtInstalled/5.15.3/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
 ../../QtInstalled/5.15.3/bin/cmake --build . -j12
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkgui"
@@ -72,7 +72,7 @@ echo "Build dtkwidget"
 cd ../../dtkwidget
 mkdir build
 cd build
-../../QtInstalled/5.15.3/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
+../../QtInstalled/5.15.3/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=on -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="../../QtInstalled/5.15.3/" -DCMAKE_INSTALL_PREFIX="../../QtInstalled/5.15.3/" -DBUILD_DOCS=false ..
 ../../QtInstalled/5.15.3/bin/cmake --build . -j12
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkwidget"
