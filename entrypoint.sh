@@ -81,3 +81,7 @@ cd build
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkwidget"
 ldconfig
+
+cd ../../QtInstalled/5.15.3/lib/pkgconfig
+sed -i "s|${CURRENT_LIB_PATH}|\[_PKG_CONFIG_PATH_MODULE_\]|" *.pc
+cd -
