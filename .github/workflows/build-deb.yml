@@ -28,7 +28,9 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: build
       - name: Pack
-        run: tar zcvf DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
+        run: |
+          cd QtInstalled/5.15.3/
+          tar zcvf ../../DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
