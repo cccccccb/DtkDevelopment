@@ -28,7 +28,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: build
       - name: Pack
-        run: mv DtkEnvironment DtkEnvironment-${{ env.RELEASE_VERSION }}
+        run: mv DtkInstaller DtkInstaller-${{ env.RELEASE_VERSION }}
 
       - name: Create Release
         id: create_release
@@ -47,8 +47,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./DtkEnvironment-${{ env.RELEASE_VERSION }}
-          asset_name: DtkEnvironment-${{ env.RELEASE_VERSION }}
+          asset_path: ./DtkInstaller-${{ env.RELEASE_VERSION }}
+          asset_name: DtkInstaller-${{ env.RELEASE_VERSION }}
           asset_content_type: application/*
 #       - name: Release
 #         uses: softprops/action-gh-release@v1

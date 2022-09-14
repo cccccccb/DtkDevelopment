@@ -89,4 +89,4 @@ cd ../../
 tar zcvf ../../DtkDevelopment.tar.gz .
 cd ../../
 mv DtkDevelopment.tar.gz DtkEnvironment/packages/com.deepin.dtk/data
-./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ DtkEnvironment
+./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ -t installerbase DtkInstaller
