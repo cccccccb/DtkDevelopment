@@ -84,4 +84,9 @@ ldconfig
 
 cd ../../QtInstalled/5.15.3/lib/pkgconfig
 sed -i "s|${CURRENT_LIB_PATH}|\[_PKG_CONFIG_PATH_MODULE_\]|" *.pc
-cd -
+
+cd ../../
+tar zcvf ../../DtkDevelopment.tar.gz .
+cd ../../
+mv DtkDevelopment.tar.gz DtkEnvironment/packages/com.deepin.dtk/data
+./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ DtkEnvironment

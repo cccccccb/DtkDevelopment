@@ -28,12 +28,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: build
       - name: Pack
-        run: |
-          cd QtInstalled/5.15.3/
-          tar zcvf ../../DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz .
-          cd ../../
-          mv DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz DtkEnvironment/packages/com.deepin.dtk/data
-          ./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ DtkEnvironment-${{ env.RELEASE_VERSION }}
+        run: mv DtkEnvironment DtkEnvironment-${{ env.RELEASE_VERSION }}
 
       - name: Create Release
         id: create_release
