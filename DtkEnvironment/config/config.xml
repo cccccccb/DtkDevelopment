@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Dtk Environment</Name>
+    <Version>0.0.2</Version>
+    <Title>Dtk Environment</Title>
+    <Publisher>Mojony[mojony0424@163.com]</Publisher>
+    <StartMenuDir>Dtk</StartMenuDir>
+    <TargetDir>@HomeDir@/Dtk-0.02</TargetDir>
+</Installer>

@@ -31,6 +31,10 @@ jobs:
         run: |
           cd QtInstalled/5.15.3/
           tar zcvf ../../DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
+          cd ../../
+          mv DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz DtkEnvironment/packages/com.deepin.dtk/data
+          ./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ DtkEnvironment-${{ env.RELEASE_VERSION }}
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -48,9 +52,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz
-          asset_name: DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz
-          asset_content_type: application/tar+gzip
+          asset_path: ./DtkEnvironment-${{ env.RELEASE_VERSION }}
+          asset_name: DtkEnvironment-${{ env.RELEASE_VERSION }}
+          asset_content_type: application/*
 #       - name: Release
 #         uses: softprops/action-gh-release@v1
 #         if: startsWith(github.ref, 'refs/tags/')
