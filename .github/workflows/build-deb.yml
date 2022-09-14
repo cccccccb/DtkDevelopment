@@ -30,7 +30,7 @@ jobs:
       - name: Pack
         run: |
           cd QtInstalled/5.15.3/
-          tar zcvf ../../DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz QtInstalled/5.15.3/
+          tar zcvf ../../DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz .
           cd ../../
           mv DtkDevelopment-${{ env.RELEASE_VERSION }}.tar.gz DtkEnvironment/packages/com.deepin.dtk/data
           ./binarycreator -c DtkEnvironment/config/config.xml  -p DtkEnvironment/packages/ DtkEnvironment-${{ env.RELEASE_VERSION }}
