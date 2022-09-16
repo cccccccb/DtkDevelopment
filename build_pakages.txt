@@ -51,3 +51,4 @@ libxcb-util0-dev
 libx11-xcb-dev
 libxcb-sync-dev
 libxcb-randr0-dev
+libqt5xdg-dev
