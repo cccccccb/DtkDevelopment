@@ -5,8 +5,7 @@ mv /etc/apt/sources.list /etc/apt/sources.list.back
 cp .environment/sources.list /etc/apt/
 cat /etc/apt/sources.list
 apt update
-apt install -y build-essential git libmd4c0 libssh-dev libgtest-dev libgmock-dev librsvg2-dev libxext-dev libudev-dev x11proto-xext-dev libxcb-util0-dev libstartup-notification0-dev libmtdev-dev libegl1-mesa-dev libudev-dev libfontconfig1-dev libfreetype6-dev libglib2.0-dev libxrender-dev libxi-dev libcups2-dev
-
+cat build_pakages.txt | xargs apt install -y
 git submodule init
 git submodule update
 
@@ -81,6 +80,25 @@ cd build
 ../../QtInstalled/5.15.3/bin/cmake --install .
 echo "Finished dtkwidget"
 ldconfig
+
+# build qt5integration
+echo "Build qt5integration"
+cd ../../qt5integration
+mkdir build
+cd build
+../../QtInstalled/5.15.3/bin/qmake CONFIG+=debug ..
+make -j12
+make install
+echo "Finished qt5integration"
+
+echo "Build qt5platform-plugins"
+cd ../../qt5platform-plugins
+mkdir build
+cd build
+../../QtInstalled/5.15.3/bin/qmake CONFIG+=debug ..
+make -j12
+make install
+echo "Finished qt5platform-plugins"
 
 cd ../../QtInstalled/5.15.3/lib/pkgconfig
 sed -i "s|${CURRENT_LIB_PATH}|\[_PKG_CONFIG_PATH_MODULE_\]|" *.pc
