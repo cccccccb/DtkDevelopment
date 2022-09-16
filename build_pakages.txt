@@ -33,7 +33,6 @@ libegl1-mesa-dev
 libmtdev-dev
 libxkbcommon-x11-dev
 libdbus-1-dev
-libqt5opengl5-dev
 libudev-dev
 libxrender-dev
 libxi-dev
@@ -45,8 +44,6 @@ libxcb-damage0-dev
 libxcb-composite0-dev
 libcairo2-dev
 libkf5wayland-dev
-qtwayland5-private-dev
-libqt5waylandclient5-dev
 libwayland-dev
 libxcb-xinput-dev
 libxcb-util-dev
