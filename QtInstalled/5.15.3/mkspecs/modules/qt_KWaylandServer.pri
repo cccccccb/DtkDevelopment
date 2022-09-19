@@ -1,0 +1,10 @@
+QT.KWaylandServer.VERSION = 5.54.0
+QT.KWaylandServer.MAJOR_VERSION = 5
+QT.KWaylandServer.MINOR_VERSION = 54
+QT.KWaylandServer.PATCH_VERSION = 0
+QT.KWaylandServer.name = KF5WaylandServer
+QT.KWaylandServer.defines = 
+QT.KWaylandServer.includes = $$QT_MODULE_LIB_BASE/KF5
+QT.KWaylandServer.private_includes =
+QT.KWaylandServer.libs = $$QT_MODULE_LIB_BASE
+QT.KWaylandServer.depends = core

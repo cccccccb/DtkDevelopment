@@ -43,7 +43,6 @@ libglib2.0-dev
 libxcb-damage0-dev
 libxcb-composite0-dev
 libcairo2-dev
-libkf5wayland-dev
 libwayland-dev
 libxcb-xinput-dev
 libxcb-util-dev
